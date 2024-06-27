@@ -28,11 +28,6 @@ const Tournaments = () => {
 
   if (error) return <div>Error: {error}</div>;
 
-  const toTour = () => {
-    window.location.href = tournaments.position.url
-    alert('button clicked')
-  }
-
   return (
     <Layout>
       <h1>Ongoing Tournaments</h1>
