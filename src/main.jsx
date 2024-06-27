@@ -11,6 +11,8 @@ import {
 import Profile from "./components/Profile.jsx";
 import Leaderboard from "./components/Leaderboard.jsx";
 import Tournament from "./components/Tournaments.jsx";
+import Github from "./components/Github.jsx";
+import { githubData } from "./api/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +20,8 @@ const router = createBrowserRouter(
       <Route path="" element={<Profile />} />
       <Route path="leaderboard" element={<Leaderboard />} />
       <Route path="tournament" element={<Tournament />} />
+      <Route path="github" element={<Github/>}
+      loader={githubData} />
     </Route>
   )
 );

@@ -6,4 +6,11 @@ export async function fetchLichessData(endpoint) {
     }
     return response.json();
   }
+
+
+  export async function githubData () {
+    const response = await fetch('https://api.github.com/users/thechiragkaushik')
+    return response.json()
+}
+
   

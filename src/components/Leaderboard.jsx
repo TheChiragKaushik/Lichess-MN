@@ -10,8 +10,11 @@ const Leaderboards = () => {
   useEffect(() => {
     const fetchLeaders = async () => {
       try {
-        const data = await fetchLichessData("player");
-        setLeaders(data); // Ensure this is an array
+        const data = await fetchLichessData('player');
+        // console.log(data.bullet)
+        const leaderData = data.bullet;
+        setLeaders(leaderData); // Ensure this is an array
+        console.log(leaderData)
       } catch (error) {
         setError(error.message);
       }
@@ -28,9 +31,8 @@ const Leaderboards = () => {
         <ul>
           {leaders.map((leader) => (
             <li key={leader.id}>
-              {leader.title} {leader.username} - Blitz:{" "}
-              {leader.perfs.blitz.rating}, Rapid: {leader.perfs.rapid.rating},
-              Classical: {leader.perfs.classical.rating}
+              {leader.title} {leader.username} - Rating:{" "}
+              {leader.perfs.bullet.rating}
             </li>
           ))}
         </ul>
